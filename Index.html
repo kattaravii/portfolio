@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ravi Katta</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#f7f7f5;color:#1a1a1a;font-family:'Inter',system-ui,sans-serif;}
+.wrap{max-width:860px;margin:0 auto;padding:0 28px;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+.logo{font-size:16px;font-weight:700;color:#1a1a1a;letter-spacing:-0.3px;}
+.logo span{color:#5a6acf;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-size:13px;color:#888;text-decoration:none;cursor:pointer;transition:color 0.2s;}
+.nav-links a:hover{color:#1a1a1a;}
+.divider{height:1px;background:#ebebeb;}
+.hero{padding:68px 0 60px;}
+.eyebrow{display:flex;align-items:center;gap:9px;margin-bottom:18px;}
+.edot{width:7px;height:7px;border-radius:50%;background:#5a6acf;}
+.etxt{font-size:13px;color:#5a6acf;font-weight:500;letter-spacing:0.4px;}
+.hero h1{font-size:48px;font-weight:700;line-height:1.08;letter-spacing:-1.8px;color:#1a1a1a;margin-bottom:16px;}
+.hero h1 em{font-style:normal;color:#5a6acf;}
+.hero-desc{font-size:15px;color:#666;line-height:1.75;max-width:500px;margin-bottom:32px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-fill{background:#1a1a1a;color:#fff;border:none;padding:12px 26px;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;transition:opacity 0.2s;text-decoration:none;display:inline-block;}
+.btn-fill:hover{opacity:0.8;}
+.btn-outline{background:#fff;color:#1a1a1a;border:1.5px solid #e0e0e0;padding:11px 22px;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;transition:border-color 0.2s,color 0.2s;text-decoration:none;display:inline-block;}
+.btn-outline:hover{border-color:#5a6acf;color:#5a6acf;}
+.avail{display:flex;align-items:center;gap:7px;margin-top:20px;}
+.adot{width:7px;height:7px;border-radius:50%;background:#3dbf7e;animation:blink 2.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.atxt{font-size:13px;color:#888;}
+section{padding:56px 0;}
+.sec-label{font-size:11px;font-weight:600;color:#5a6acf;letter-spacing:2px;margin-bottom:7px;}
+.sec-title{font-size:28px;font-weight:700;letter-spacing:-0.8px;color:#1a1a1a;margin-bottom:32px;}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;}
+.proj-card{background:#fff;border:1px solid #ebebeb;border-radius:14px;padding:26px;cursor:pointer;transition:border-color 0.2s,transform 0.2s;}
+.proj-card:hover{border-color:#5a6acf;transform:translateY(-3px);}
+.proj-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.proj-num{font-size:12px;color:#ccc;font-weight:600;letter-spacing:1px;}
+.proj-badge{font-size:11px;color:#3dbf7e;background:#edfaf3;border-radius:20px;padding:3px 10px;font-weight:500;}
+.proj-badge.iot{color:#b06acf;background:#f5eefe;}
+.proj-card h3{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:8px;letter-spacing:-0.2px;}
+.proj-card p{font-size:13px;color:#888;line-height:1.65;margin-bottom:14px;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.ptag{font-size:11px;color:#5a6acf;background:#eeedfe;border-radius:20px;padding:3px 10px;font-weight:500;}
+.proj-links{display:flex;gap:14px;margin-top:14px;padding-top:12px;border-top:1px solid #f2f2f2;}
+.plink{font-size:12px;color:#999;cursor:pointer;text-decoration:none;transition:color 0.2s;}
+.plink:hover{color:#5a6acf;}
+.skills-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:14px;}
+.skill-card{background:#fff;border:1px solid #ebebeb;border-radius:14px;padding:22px;}
+.skill-card-title{font-size:11px;font-weight:600;color:#ccc;letter-spacing:2px;margin-bottom:16px;}
+.skill-row{margin-bottom:12px;}
+.skill-row:last-child{margin-bottom:0;}
+.skill-meta{display:flex;justify-content:space-between;margin-bottom:5px;}
+.sname{font-size:13px;color:#1a1a1a;font-weight:500;}
+.spct{font-size:12px;color:#ccc;}
+.bar-bg{height:3px;background:#f0f0f0;border-radius:2px;}
+.bar-fill{height:3px;border-radius:2px;background:#5a6acf;}
+.bar-fill.g{background:#3dbf7e;}
+.bar-fill.p{background:#b06acf;}
+.contact-box{background:#fff;border:1px solid #ebebeb;border-radius:16px;padding:36px;}
+.contact-title{font-size:20px;font-weight:700;letter-spacing:-0.5px;color:#1a1a1a;margin-bottom:6px;}
+.contact-sub{font-size:14px;color:#888;line-height:1.65;max-width:440px;margin-bottom:28px;}
+.contact-info{display:grid;gap:10px;margin-bottom:24px;}
+.info-row{display:flex;align-items:center;gap:10px;font-size:13px;color:#555;}
+.info-label{font-size:12px;color:#bbb;min-width:60px;}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+.sbtn{display:flex;align-items:center;gap:7px;padding:9px 18px;border:1.5px solid #e0e0e0;border-radius:9px;font-size:13px;font-weight:500;color:#555;cursor:pointer;background:#fff;transition:border-color 0.2s,color 0.2s;text-decoration:none;}
+.sbtn:hover{border-color:#5a6acf;color:#5a6acf;}
+.form-grid{display:grid;gap:12px;max-width:440px;}
+.form-grid input,.form-grid textarea{width:100%;padding:11px 14px;border:1.5px solid #e8e8e8;border-radius:9px;font-size:14px;font-family:inherit;color:#1a1a1a;background:#fafafa;outline:none;transition:border-color 0.2s;}
+.form-grid input:focus,.form-grid textarea:focus{border-color:#5a6acf;background:#fff;}
+.form-grid input::placeholder,.form-grid textarea::placeholder{color:#ccc;}
+.form-grid textarea{min-height:88px;resize:vertical;}
+.edu-list{display:grid;gap:14px;}
+.edu-card{background:#fff;border:1px solid #ebebeb;border-radius:14px;padding:22px 26px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;}
+.edu-left{}
+.edu-degree{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:4px;letter-spacing:-0.2px;}
+.edu-school{font-size:13px;color:#888;}
+.edu-year{font-size:12px;font-weight:500;color:#5a6acf;background:#eeedfe;border-radius:20px;padding:3px 12px;white-space:nowrap;align-self:flex-start;}
+footer{padding:26px 0;border-top:1px solid #ebebeb;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.foot{font-size:13px;color:#ccc;}
+@media(max-width:600px){
+  .hero h1{font-size:34px;}
+  .nav-links{gap:14px;}
+  .contact-box{padding:22px;}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <div class="logo">Ravi<span>.</span>Katta</div>
+    <div class="nav-links">
+      <a href="#intro">intro</a>
+      <a href="#about">about</a>
+      <a href="#projects">projects</a>
+      <a href="#skills">skills</a>
+      <a href="#contact">contact</a>
+    </div>
+  </nav>
+</div>
+
+<div class="divider"></div>
+
+<div class="wrap" id="intro">
+  <div class="hero">
+    <div class="eyebrow"><div class="edot"></div><span class="etxt">Full Stack Developer &amp; AI Enthusiast</span></div>
+    <h1>Hi, I'm<br><em>Ravi Katta.</em></h1>
+     <div class="hero-actions">
+      <a href="#projects" class="btn-fill">View my work</a>
+      <a href="#contact" class="btn-outline">Get in touch</a>
+    </div>
+    <div class="avail"><div class="adot"></div><span class="atxt">Open to new opportunities</span></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="wrap" id="projects">
+  <section>
+    <div class="sec-label">PROJECTS</div>
+    <div class="sec-title">What I've built</div>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-num">01</span><span class="proj-badge">Live</span></div>
+        <h3>Grocery Mart</h3>
+        <p>A full-featured online grocery shopping platform with product listings, cart management, and a smooth checkout experience.</p>
+        <div class="proj-tags">
+          <span class="ptag">React</span><span class="ptag">Node.js</span><span class="ptag">Full Stack</span><span class="ptag">HTML/CSS</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="https://github.com/kattaravii" target="_blank">GitHub ↗</a>
+          <a class="plink" href="https://grocery-mart-kappa.vercel.app/" target="_blank">Live demo ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-top"><span class="proj-num">02</span><span class="proj-badge iot">IoT</span></div>
+        <h3>Smart Attendance — RFID</h3>
+        <p>IoT-based attendance system using RFID cards to automatically mark and log student or employee presence in real time.</p>
+        <div class="proj-tags">
+          <span class="ptag">Python</span><span class="ptag">IoT</span><span class="ptag">RFID</span><span class="ptag">Hardware</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="https://github.com/kattaravii" target="_blank">GitHub ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<div class="wrap" id="skills">
+  <section>
+    <div class="sec-label">SKILLS</div>
+    <div class="sec-title">What I work with</div>
+    <div class="skills-wrap">
+
+      <div class="skill-card">
+        <div class="skill-card-title">LANGUAGES</div>
+        <div class="skill-row"><div class="skill-meta"><span class="sname">Python</span><span class="spct">88%</span></div><div class="bar-bg"><div class="bar-fill" style="width:88%"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="sname">HTML / CSS</span><span class="spct">92%</span></div><div class="bar-bg"><div class="bar-fill" style="width:92%"></div></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-title">FRAMEWORKS</div>
+        <div class="skill-row"><div class="skill-meta"><span class="sname">React.js</span><span class="spct">85%</span></div><div class="bar-bg"><div class="bar-fill g" style="width:85%"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="sname">Full Stack</span><span class="spct">82%</span></div><div class="bar-bg"><div class="bar-fill g" style="width:82%"></div></div></div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-title">OTHER</div>
+        <div class="skill-row"><div class="skill-meta"><span class="sname">AI Prompting</span><span class="spct">90%</span></div><div class="bar-bg"><div class="bar-fill p" style="width:90%"></div></div></div>
+        <div class="skill-row"><div class="skill-meta"><span class="sname">IoT / RFID</span><span class="spct">78%</span></div><div class="bar-bg"><div class="bar-fill p" style="width:78%"></div></div></div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<div class="wrap" id="about">
+  <section>
+    <div class="sec-label">ABOUT</div>
+    <div class="sec-title">Education</div>
+    <div class="edu-list">
+
+      <div class="edu-card">
+        <div class="edu-left">
+          <div class="edu-degree">B.Tech — PP Savani University</div>
+          <div class="edu-school">Surat, Gujarat</div>
+        </div>
+        <span class="edu-year">2023 – 2027</span>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-left">
+          <div class="edu-degree">Class XII — Narayana Junior College</div>
+          <div class="edu-school">Guntur, Andhra Pradesh</div>
+        </div>
+        <span class="edu-year">2021 – 2023</span>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-left">
+          <div class="edu-degree">Class X — Sri Kakatiya High School</div>
+          <div class="edu-school">Pedakurapadu, Guntur, Andhra Pradesh</div>
+        </div>
+        <span class="edu-year">up to 2021</span>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<div class="wrap" id="contact">
+  <section>
+    <div class="sec-label">CONTACT</div>
+    <div class="sec-title">Let's connect</div>
+    <div class="contact-box">
+      <div class="contact-title">Got a project in mind?</div>
+      <div class="contact-sub">I'm always open to collaborations, freelance work, or just a good chat about tech. Reach out — I reply fast!</div>
+      <div class="contact-info">
+        <div class="info-row"><span class="info-label">Phone</span><span>+91 91210 64675</span></div>
+        <div class="info-row"><span class="info-label">Email</span><a href="mailto:kattaravi199@gmail.com" style="color:#5a6acf;text-decoration:none;">kattaravi199@gmail.com</a></div>
+      </div>
+      <div class="socials">
+        <a class="sbtn" href="mailto:kattaravi199@gmail.com">✉ Email me</a>
+        <a class="sbtn" href="https://github.com/kattaravii" target="_blank">{ } GitHub</a>
+        <a class="sbtn" href="https://linkedin.com/in/RaviKatta" target="_blank">in LinkedIn</a>
+      </div>
+      <div class="form-grid">
+        <input type="text" placeholder="Your name" />
+        <input type="email" placeholder="your@email.com" />
+        <textarea placeholder="Tell me about your project..."></textarea>
+        <button class="btn-fill" style="width:fit-content;padding:12px 24px;">Send message</button>
+      </div>
+    </div>
+  </sec
